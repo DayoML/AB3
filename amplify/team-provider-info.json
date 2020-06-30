@@ -10,6 +10,11 @@
             "StackName": "amplify-concierge-production-81901",
             "StackId": "arn:aws:cloudformation:us-east-1:673277123564:stack/amplify-concierge-production-81901/457b4100-bad4-11ea-a79b-0e229acdb0d3",
             "AmplifyAppId": "d1sa9qe3dvjjeo"
+        },
+        "categories": {
+            "auth": {
+                "concierge552c29d5": {}
+            }
         }
     }
 }

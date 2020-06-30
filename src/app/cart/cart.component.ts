@@ -2,29 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
 import Amplify, { API } from 'aws-amplify';
-
-const apiName = 'concierge'; // replace this with your api name.
-const path = '/trip'; //replace this with the path you have configured on your API
-const myInit = {
-    body: {}, // replace this with attributes you need
-    headers: {}, // OPTIONAL
-};
-
-API
-    .post(apiName, path, myInit)
-    .then(response => {
-        // Add your code here
-    })
-    .catch(error => {
-        console.log(error.response);
-    });
+import Amplify2, { Auth } from 'aws-amplify';
 
 async function postData() {
     const apiName = 'concierge';
     const path = '/trip';
     const myInit = { // OPTIONAL
-        body: {}, // replace this with attributes you need
-        headers: {}, // OPTIONAL
+        body: {
+            "ProductID" : "cd8976f0-1b6b-43a5-bc98-000f78a6dee7",
+            "orderamount" : "2500",
+            "orderitemcount" : "25"
+        }, // replace this with attributes you need
+        headers: {
+            Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
+            }, // OPTIONAL*/
     };
 
     return await API.post(apiName, path, myInit);
@@ -41,8 +32,7 @@ export class CartComponent implements OnInit {
 
   constructor(private cartService: CartService, private formBuilder: FormBuilder,) { 
     this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
+      ItemCount: ''
     });
   }
 

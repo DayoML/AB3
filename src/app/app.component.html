@@ -1,13 +1,16 @@
-<app-top-bar></app-top-bar>
+
 <amplify-authenticator>
   <div>
-    My App
-    <amplify-sign-out></amplify-sign-out>
+    <app-top-bar></app-top-bar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+  <br>
+  <br>
+  <p align="right" width="100"><amplify-sign-out ></amplify-sign-out></p>
 </amplify-authenticator>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

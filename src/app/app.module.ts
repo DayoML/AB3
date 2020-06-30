@@ -17,6 +17,28 @@ import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
 Amplify.configure(awsconfig);
+Amplify.configure({
+
+ // OPTIONAL - if your API requires authentication
+ Auth: {
+     // REQUIRED - Amazon Cognito Identity Pool ID
+     identityPoolId: 'us-east-1:22b356af-033d-46b1-830d-050a12b50495',
+     // REQUIRED - Amazon Cognito Region
+     region: 'us-east-1',
+     // OPTIONAL - Amazon Cognito User Pool ID
+     userPoolId: 'us-east-1_fIntQk14f',
+     // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
+     userPoolWebClientId: '1obmofjrq8oa50pf1qqdkpgvf7'
+ },
+  API: {
+    endpoints: [
+      {
+        name: "concierge",
+        endpoint: "https://xu96dxae5j.execute-api.us-east-1.amazonaws.com/development"
+      }
+    ]
+  }
+});
 
 @NgModule({
   imports: [

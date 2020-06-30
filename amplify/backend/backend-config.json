@@ -1,1 +1,10 @@
-{}
+{
+	"auth": {
+		"concierge552c29d5": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

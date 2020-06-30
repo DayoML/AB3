@@ -7,10 +7,12 @@ import { HttpClient } from '@angular/common/http';
 
 export class CartService {
   items = [];
+  maxitems = 1;
 
   constructor(private http: HttpClient) { }
 
   addToCart(product) {
+    if (this.items.length < this.maxitems)
     this.items.push(product);
   }
 
