@@ -1,0 +1,15 @@
+{
+    "production": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-concierge-production-81901-authRole",
+            "UnauthRoleArn": "arn:aws:iam::673277123564:role/amplify-concierge-production-81901-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::673277123564:role/amplify-concierge-production-81901-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-concierge-production-81901-deployment",
+            "UnauthRoleName": "amplify-concierge-production-81901-unauthRole",
+            "StackName": "amplify-concierge-production-81901",
+            "StackId": "arn:aws:cloudformation:us-east-1:673277123564:stack/amplify-concierge-production-81901/457b4100-bad4-11ea-a79b-0e229acdb0d3",
+            "AmplifyAppId": "d1sa9qe3dvjjeo"
+        }
+    }
+}

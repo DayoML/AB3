@@ -1,7 +1,42 @@
 import { Component } from '@angular/core';
-
 import { products } from '../products';
+/*
+import Amplify, { API } from 'aws-amplify';
 
+const apiName = 'concierge';
+const path = '/trip';
+const myInit = { // OPTIONAL
+  headers: {}, // OPTIONAL
+  response: true, // OPTIONAL (return the entire Axios response object instead of only response.data)
+  queryStringParameters: {  // OPTIONAL
+    name: 'param',
+  },
+};
+
+API
+    .get(apiName, path, myInit)
+    .then(response => {
+      // Add your code here
+    })
+    .catch(error => {
+      console.log(error.response);
+    });
+
+function getData() {
+  const apiName = 'concierge';
+  const path = '/trip';
+  const myInit = { // OPTIONAL
+    headers: {}, // OPTIONAL
+  };
+
+  return API.get(apiName, path, myInit);
+}
+
+(async function () {
+  const response = await getData();
+})();
+
+ */
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
