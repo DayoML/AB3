@@ -21,9 +21,10 @@ async function getData() {
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = (async function () {
+  products = products;
+      /*(async function () {
     const response = await getData();
-  })();
+  })();*/
 
   share() {
     window.alert('The product has been shared!');

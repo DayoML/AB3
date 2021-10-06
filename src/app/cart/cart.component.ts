@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import Amplify, { API } from 'aws-amplify';
 import Amplify2, { Auth } from 'aws-amplify';
 
+
 async function postData() {
     const apiName = 'concierge';
     const path = '/trip';
@@ -17,7 +18,6 @@ async function postData() {
             Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`,
             }, // OPTIONAL*/
     };
-
     return await API.post(apiName, path, myInit);
 }
 
@@ -29,10 +29,11 @@ async function postData() {
 export class CartComponent implements OnInit {
   items;
   checkoutForm;
+  public edited = false;
 
-  constructor(private cartService: CartService, private formBuilder: FormBuilder,) { 
+  constructor(private cartService: CartService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
-      ItemCount: ''
+        itemcount: ''
     });
   }
 
@@ -46,7 +47,8 @@ export class CartComponent implements OnInit {
     this.checkoutForm.reset();
 
     postData();
-    window.alert('Your order has been submitted'); 
+    this.edited = true;
+    window.alert('Your order has been submitted');
     console.warn('Your order has been submitted', customerData);
   }
 

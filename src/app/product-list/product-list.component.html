@@ -1,18 +1,33 @@
 
+  <div *ngFor="let product of products; index as productId">
+    <table>
+  <tr>
+    <td valign="top">
+        <img *ngIf="product.image" [src]="'https://dvekanzeg7sxc.cloudfront.net/'+product.image" alt="image" height="125">
+    </td><td width="10"></td>
+    <td valign="top"><h3><a [title]="product.name + ' details'" [routerLink]="['/products', productId]">{{ product.name }}</a></h3>
+      <span *ngIf="product.description">Description: {{ product.description }}</span>
+    </td>
+  </tr>
+    </table>
+    <hr>
+  </div>
 
-<div *ngFor="let product of products; index as productId">
+
+  <!--
   <h3>  
-    <a [title]="product.Title + ' details'" [routerLink]="['/products', ProductID]">
-      {{ product.Title }}
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
     </a>
     </h3>
-    <p *ngIf="product.description">
-    Description: {{ product.description }}
-    </p>
+
     <p *ngIf="product.image">
-      <img [src]="product.image" alt="image" height="200">
+      <img [src]="'https://dvekanzeg7sxc.cloudfront.net/'+product.image" alt="image" height="200">
     </p>
-<!--    
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
     <button (click)="share()">
     Share
   </button>
@@ -22,4 +37,3 @@
   (notify)="onNotify()">
   </app-product-alerts>
 -->
-</div>

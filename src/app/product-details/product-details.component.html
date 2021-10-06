@@ -2,8 +2,9 @@
 
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
-  <h4>{{ product.price | currency }}</h4>
-  <p>{{ product.description }}</p>
+  <h4>{{ product.price | currency }}&nbsp;&nbsp;&nbsp;&nbsp;<button (click)="addToCart(product)">Add to Cart</button></h4>
+  <table><tr><td><img *ngIf="product.image" [src]="'https://dvekanzeg7sxc.cloudfront.net/'+product.image" alt="image" height="125"></td><td><p>{{ product.description }}</p></td></tr></table>
 
-  <button (click)="addToCart(product)">Buy</button>
+
+
 </div>

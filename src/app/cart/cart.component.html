@@ -4,21 +4,35 @@
   <a routerLink="/shipping">Shipping Prices</a>
 </p>
 -->
-
+<div *ngIf="!edited">
 <div class="cart-item" *ngFor="let item of items">
+ <span><img *ngIf="item.image" [src]="'https://dvekanzeg7sxc.cloudfront.net/'+item.image" alt="image" height="60"></span>
   <span>{{ item.name }}</span>
+  <span>{{ item.itemcount}} Nights</span>
   <span>{{ item.price | currency }}</span>
 </div>
+</div>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-
+<form *ngIf="!edited" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<!--
   <div>
     <label for="itemcount">
-      Name
+      Number of Nights:
     </label>
     <input id="itemcount" type="text" formControlName="itemcount">
   </div>
-
+-->
   <button class="button" type="submit">Purchase</button>
 
 </form>
+
+<div *ngIf="edited" class="alert alert-success box-msg" role="alert">
+    <br>
+    <strong>Thank you for your purchase!</strong>
+    <br><br>
+    <a href="https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/9c07cb2f-cf2f-4719-9cff-fba8ad43dc28">View Data in QuickSight</a>
+    <br><br>
+    <a href="https://concierge-2.notebook.us-east-1.sagemaker.aws/notebooks/Load%20with%20wrangler.ipynb">View Data in SageMaker</a>
+
+
+</div>
