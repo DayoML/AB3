@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { products } from '../products';
+import { recommendations } from '../recommendations';
 import Amplify, { API } from 'aws-amplify';
 import Amplify2, { Auth } from 'aws-amplify';
 
@@ -13,6 +14,16 @@ async function getData() {
   };
   return await  API.get(apiName, path, myInit);
 }
+// async function getRecommendationData() {
+//   const apiName = 'AB3';
+//   const path = '/personalization';
+//   const myInit = { // OPTIONAL
+//     headers: {
+//       Authorization: `Bearer ${(await Auth.currentSession()).getIdToken().getJwtToken()}`
+//     }, // OPTIONAL
+//   };
+//   return await  API.get(apiName, path, myInit);
+// }
 
 
 @Component({
@@ -22,6 +33,8 @@ async function getData() {
 })
 export class ProductListComponent {
   products = products;
+  //personalizeResponse = getRecommendationData();
+  recommendations = recommendations;
       /*(async function () {
     const response = await getData();
   })();*/

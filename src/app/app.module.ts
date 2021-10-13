@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import{FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -16,22 +16,27 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
+
 Amplify.configure(awsconfig);
 Amplify.configure({
 
  // OPTIONAL - if your API requires authentication
  Auth: {
      // REQUIRED - Amazon Cognito Identity Pool ID
-     identityPoolId: 'us-east-1:22b356af-033d-46b1-830d-050a12b50495',
+     identityPoolId: 'us-east-1:657e28ca-b448-46e7-a38e-50912d7dff16',
      // REQUIRED - Amazon Cognito Region
      region: 'us-east-1',
      // OPTIONAL - Amazon Cognito User Pool ID
-     userPoolId: 'us-east-1_fIntQk14f',
+     userPoolId: 'us-east-1_oH9BmKgTU',
      // OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
-     userPoolWebClientId: '1obmofjrq8oa50pf1qqdkpgvf7'
+     userPoolWebClientId: 'vbeth9n82h6id2kivjgavs788'
  },
   API: {
     endpoints: [
+      {
+        name: "AB3",
+        endpoint: "https://xc2kel50bh.execute-api.us-east-2.amazonaws.com/personalization"
+      },
       {
         name: "concierge",
         endpoint: "https://xu96dxae5j.execute-api.us-east-1.amazonaws.com/development"
@@ -44,6 +49,7 @@ Amplify.configure({
   imports: [
     BrowserModule,
     AmplifyUIAngularModule,
+    FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([

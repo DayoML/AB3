@@ -1,18 +1,49 @@
 
-  <div *ngFor="let product of products; index as productId">
+  <div>
     <table>
+
   <tr>
-    <td valign="top">
-        <img *ngIf="product.image" [src]="'https://dvekanzeg7sxc.cloudfront.net/'+product.image" alt="image" height="125">
-    </td><td width="10"></td>
+    <td valign="top" width="20%" *ngFor="let product of products; index as productId">
+      <table>
+        <tr>
+          <td><img *ngIf="product.image" [src]="'https://dvekanzeg7sxc.cloudfront.net/'+product.image" alt="image" height="125">
+          </td>
+        
+    <td width="5"></td>
     <td valign="top"><h3><a [title]="product.name + ' details'" [routerLink]="['/products', productId]">{{ product.name }}</a></h3>
       <span *ngIf="product.description">Description: {{ product.description }}</span>
     </td>
+        </tr>
+      </table>
+        
   </tr>
     </table>
     <hr>
   </div>
 
+
+  <div>
+    <table>
+
+
+  <tr>
+    <td valign="top" width="33.33%" *ngFor="let recommendation of recommendations; index as itemId">
+      <table>
+        <tr>
+          <td><img *ngIf="recommendation.imageKey" [src]="'https://d2g1d98hwd30nd.cloudfront.net'+recommendation.imageKey" alt="image" height="125">
+          </td>
+
+    <td width="3"></td>
+    <td valign="top"><h3><a [title]="recommendation.locationName + ' details'" [routerLink]="['/products', itemId]">{{ recommendation.locationName }}</a></h3>
+      <span *ngIf="recommendation.locationName">Description: {{ recommendation.locationName }}</span>
+     </td>
+         </tr>
+      </table>
+
+  </tr>
+    </table>
+    <hr>
+  </div>
 
   <!--
   <h3>  

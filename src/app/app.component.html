@@ -1,4 +1,4 @@
-
+<!--
 <amplify-authenticator>
   <div>
     <app-top-bar></app-top-bar>
@@ -11,9 +11,155 @@
   <p align="right" width="100"><amplify-sign-out ></amplify-sign-out></p>
 </amplify-authenticator>
 
+-->
+
+
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 -->
+
+
+
+
+<header>
+  <div>
+    
+    <i class="fab fa-aws"></i>
+    <p style="padding-left:10px;">AnyCompany Travels</p>
+  
+  <nav>
+    
+    <ul>
+      <i class="fas fa-hotel"></i>
+      <li><a href="#">Stays</a></li>
+      <i class="fas fa-plane"></i>
+      <li><a href="#">Flights</a></li>
+      <i class="fas fa-city"></i>
+      <li><a href="#">Things to do</a></li>
+      <i class="fas fa-car"></i>
+      <li><a href="#">Cars</a></li>
+      
+      <li class="login">
+        <i class="fas fa-power-off"></i>
+        <a href="#">login</a></li>
+    </ul>
+    
+  </nav>
+</div>
+</header><p>&nbsp;</p>
+<header class="midsection">
+  <div>
+    <i class="fas fa-atom"></i>
+    <p> Check out our Bestsellers! <sup>(This app is hosted on Amazon EC2)</sup> </p>
+  </div>
+</header>
+<p>&nbsp; </p>
+<section class="container-boxes">
+ 
+  <div class="box"  *ngFor="let item of products">
+    <div class="text">
+      <a href="">
+        <h3>{{item.name}}</h3>
+        <p>
+          <img src={{item.image}} height="50%" width="50%" style="float: left; padding-right: 10px;" />
+          {{item.description}} {{item.price}} </p>
+      </a>
+    </div>
+  </div>
+
+
+<!--
+  <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-book"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Book Now</h3>
+        <p>Book Now And Fly Around The World With Qatar Airways.</p>
+      </a>
+    </div>
+  </div>
+
+  
+  <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-plane"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Travel</h3>
+        <p>Travel With Us And Explore The World Of Adventures.</p>
+      </a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-address-card"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Teams</h3>
+        <p>Become a member,become family.Teamwork is everything.</p>
+      </a>
+    </div>
+  </div>-->
+</section>
+
+<header class="midsection"><p>&nbsp;</p>
+  <div>
+    <i class="fas fa-atom"></i>
+    <p> Places we think you'll also like to visit <sup>(Powered by Amazon Personalize )</sup> </p>
+  </div>
+</header>
+<section class="container-boxes">
+  <!-- <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-book"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Book Now</h3>
+        <p>Book Now And Fly Around The World With Qatar Airways.</p>
+      </a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-plane"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Travel</h3>
+        <p>Travel With Us And Explore The World Of Adventures.</p>
+      </a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="icon">
+      <a href=""><i class="fas fa-address-card"></i></a>
+    </div>
+    <div class="text">
+      <a href="">
+        <h3>Teams</h3>
+        <p>Become a member,become family.Teamwork is everything.</p>
+      </a>
+    </div> -->
+    <div class="box"  *ngFor="let recommendation of recommendationList">
+      <div class="text">
+        <a href="">
+          <h3>{{recommendation.locationName}}</h3>
+          <p>
+            <img src='https://d2g1d98hwd30nd.cloudfront.net/AB3_images/{{recommendation.imageKey}}'height="50%" width="50%" style="float: left; padding-right: 10px;" />
+            {{recommendation.description}}
+          </p>
+        </a>
+      </div>
+    </div>
+  
+  
+</section>
